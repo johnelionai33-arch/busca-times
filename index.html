@@ -3,11 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pedra, Papel e Tesoura</title>
+    <title>Busca de Times</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Jogo: Pedra, Papel e Tesoura</h1>
-    <p>Recarregue a página para jogar novamente!</p>
+    <div class="container">
+        <header>
+            <h1>⚽ Busca de Times</h1>
+            <p>Digite o nome de um time de futebol para ver suas informações.</p>
+        </header>
+
+        <section class="search-box">
+            <input type="text" id="teamInput" placeholder="Ex: Flamengo, Barcelona, Real Madrid...">
+            <button id="searchBtn">Buscar</button>
+        </section>
+
+        <div id="loading" class="hidden">Buscando informações...</div>
+        <div id="errorMessage" class="hidden"></div>
+
+        <main id="teamCard" class="team-card hidden">
+            <div class="card-header">
+                <img id="teamBadge" src="" alt="Escudo do time">
+                <h2 id="teamName"></h2>
+                <span id="teamFormedYear" class="badge-year"></span>
+            </div>
+
+            <div class="card-body">
+                <div class="info-group">
+                    <h3>🏟️ Estádio</h3>
+                    <p><strong>Nome:</strong> <span id="stadiumName"></span></p>
+                    <p><strong>Capacidade:</strong> <span id="stadiumCapacity"></span></p>
+                    <p><strong>Localização:</strong> <span id="stadiumLocation"></span></p>
+                </div>
+
+                <div class="info-group">
+                    <h3>📜 Sobre</h3>
+                    <p id="teamDescription"></p>
+                </div>
+
+                <div class="info-group">
+                    <h3>🌐 Redes Sociais</h3>
+                    <div id="socialLinks" class="social-links"></div>
+                </div>
+            </div>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
